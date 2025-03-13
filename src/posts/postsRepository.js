@@ -57,13 +57,40 @@ export const getUserAllPostsRepo = async (userId, next) => {
 // This is for getting a specfic post by postId
 export const getPostByIdRepo = async (postId, next) => {
     try {
-        const post = postModel.findById(postId);
+        const post = await postModel.findById(postId);
         if (!post) {
             throw new ErrorMiddleware("Post not found", 404);
         }
         return post;
     }
     catch (error) {
+        next(error);
+    }
+}
+// This is for deleting a post by postId
+export const deletePostByIdRepo = async (postId, next) => {
+    try {
+        const post = await postModel.findByIdAndDelete(postId);
+        if (!post) {
+            throw new ErrorMiddleware("Post not found", 404);
+        }
+        return post;
+    }
+    catch (error) {
+        next(error);
+    }
+}
+// This is for updating a post by postId
+export const updatePostByIdRepo = async (postId, caption, next) => {
+    try {
+        const post = await postModel.findById(postId);
+        if (!post) {
+            throw new ErrorMiddleware("Post not found", 404);
+        }
+        post.caption = caption;
+        await post.save();
+        return post;
+    } catch (error) {
         next(error);
     }
 }
