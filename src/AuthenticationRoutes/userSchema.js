@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
-    // _id: { type: mongoose.Schema.Types.ObjectId },
     name: {
         type: String,
         required: [true, "name is required"],
@@ -28,6 +27,9 @@ const userSchema = new mongoose.Schema({
         token: {
             type: String,
         }
-    }]
+    }],
+    profilePicture: {
+        type: String,
+    }
 });
 export default userSchema;

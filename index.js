@@ -3,6 +3,7 @@ dotenv.config();
 import express from 'express';
 import ErrorMiddleware from "./src/middlewares/errorMiddleware.js";
 import authenticationRouter from "./src/AuthenticationRoutes/authenticationRoutes.js";
+import postsRouter from "./src/posts/postsRoutes.js";
 import connectToDb from "./src/mongoDB/mongoDb.js";
 import cors from 'cors';
 import cookieParser from "cookie-parser";
@@ -14,6 +15,8 @@ server.use(express.urlencoded({ extended: true }));
 server.use(cookieParser());
 // this is for user router
 server.use("/api/users", authenticationRouter);
+// This is for posts router
+server.use("/api/posts", postsRouter);
 server.use(ErrorMiddleware.globalErrorHandler);
 // this is port number 
 const Port = 3000;

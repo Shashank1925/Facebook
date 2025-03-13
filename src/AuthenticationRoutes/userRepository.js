@@ -33,7 +33,8 @@ export const userLoginRepository = async (email, password, next) => {
         if (!passwordMatched) {
             throw new ErrorMiddleware("Password does not match", 400);
         }
-        const token = jwtToken({ email: user.email, id: user._id });
+        console.log(user._id);
+        const token = jwtToken({ email: user.email, id: user._id.toString() });
         user.tokens.push({ token });
         await user.save();
 
@@ -42,5 +43,40 @@ export const userLoginRepository = async (email, password, next) => {
         next(error);
     }
 };
+export const updateUserProfile = async (id, gender, profilePicture, next) => {
+    try {
+        const user = await UserModel.findById(id);
 
-
+        if (!user) {
+            throw new ErrorMiddleware("User not found", 404);
+        }
+        //  Update Only If Values Are Provided
+        if (gender) user.gender = gender;
+        if (profilePicture) user.profilePicture = profilePicture;
+        await user.save();
+        return { success: true, profilePicture: user.profilePicture };
+    } catch (error) {
+        next(error);
+    }
+};
+// This method is for getting all users 
+export const getAllUsersRepository = async (next) => {
+    try {
+        const users = await UserModel.find().select("-password").lean();
+        return { users };
+    } catch (error) {
+        next(error);
+    }
+};
+export const getSpecificUserRepository = async (id, next) => {
+    try {
+        const user = await UserModel.findById(id).select("-password").lean();
+        if (!user) {
+            throw new ErrorMiddleware("User not found", 404);
+        }
+        console.log(user);
+        return user;
+    } catch (error) {
+        next(error);
+    }
+};
