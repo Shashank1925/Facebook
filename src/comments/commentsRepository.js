@@ -75,7 +75,7 @@ export const deleteCommentRepo = async (postId, commentId, userId, next) => {
         const postOwnerId = post.userId.toString();
 
         if (commentOwnerId !== userId && postOwnerId !== userId) {
-            throw new ErrorMiddleware("You are not authorized to delete this comment", 403);
+            throw new ErrorMiddleware("Not authorized to delete this comment", 403);
         }
 
         post.Comment.splice(commentIndex, 1);

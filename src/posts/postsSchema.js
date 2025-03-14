@@ -14,7 +14,9 @@ const postsSchema = mongoose.Schema({
         type: String,
     },
     like: {
-        type: Number
+        type:
+            [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+        defualt: []
     },
     Comment: {
         type: [{ userId: String, Comments: String }]
