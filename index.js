@@ -8,6 +8,7 @@ import authenticationRouter from "./src/AuthenticationRoutes/authenticationRoute
 import postsRouter from "./src/posts/postsRoutes.js";
 import commentsRouter from "./src/comments/commentsRoutes.js";
 import likesRouter from "./src/likes/likesRoutes.js";
+import friendshipRouter from "./src/friendship/friendshipRoutes.js";
 // This is for connecting to mongoDB
 import connectToDb from "./src/mongoDB/mongoDb.js";
 // This is for cors policy
@@ -31,6 +32,8 @@ server.use("/api/posts", postsRouter);
 server.use("/api/comments", commentsRouter);
 // This is for likes router
 server.use("/api/likes", likesRouter);
+// This is for friendship router
+server.use("/api/friends", friendshipRouter);
 // This is for global error handler
 server.use(ErrorMiddleware.globalErrorHandler);
 // this is port number 
