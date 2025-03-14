@@ -16,8 +16,7 @@ export const userRegistration = async (req, res, next) => {
         sentEmail(email);
 
         res.status(201).json({
-            success: true,
-            msg: `Congratulation! ${name.toUpperCase()} registration successful`,
+            status: `Congratulation! ${name.toUpperCase()} registration successful`,
         });
     }
     catch (error) {
@@ -32,8 +31,7 @@ export const userLogin = async (req, res, next) => {
         if (!user.success) { throw new ErrorMiddleware("User not found", 404); }
         console.log(user._id);
         res.status(200).json({
-            success: true,
-            msg: "Congratulation! login successful",
+            status: "Congratulation! login successful",
             token: user.token,
             user: userUpdate._id,
         });
@@ -61,8 +59,7 @@ export const userLogout = async (req, res, next) => {
         await user.save();
 
         res.status(200).json({
-            success: true,
-            msg: "Successfully logged out",
+            status: "Successfully logged out",
         });
     } catch (error) {
         next(error);
@@ -79,8 +76,7 @@ export const userLogoutAllDevices = async (req, res, next) => {
         userAllDevices.tokens = [];
         await userAllDevices.save();
         res.status(200).json({
-            success: true,
-            msg: "Logout from all devices",
+            status: "Logout from all devices",
         });
     }
     catch (error) {
@@ -100,8 +96,7 @@ export const updateUserInformation = async (req, res, next) => {
 
         res.status(200).json({
             result,
-            success: true,
-            msg: "User information updated successfully",
+            status: "User information updated successfully",
         });
     } catch (error) {
         next(error);
@@ -113,8 +108,8 @@ export const getAllUsers = async (req, res, next) => {
         const result = await getAllUsersRepository(next);
         res.status(200).json({
             result,
-            success: true,
-            msg: "All users",
+            status: "Succcessfully got all users",
+
         });
     } catch (error) {
         next(error);
@@ -127,8 +122,8 @@ export const getSpecificUser = async (req, res, next) => {
         const result = await getSpecificUserRepository(id, next);
         res.status(200).json({
             result,
-            success: true,
-            msg: "User",
+            status: "got the user details",
+
         });
     } catch (error) {
         next(error);

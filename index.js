@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express from 'express';
+import loggerMiddleware from "./src/middlewares/loggerMiddlerware.js";
 import ErrorMiddleware from "./src/middlewares/errorMiddleware.js";
 import authenticationRouter from "./src/AuthenticationRoutes/authenticationRoutes.js";
 import postsRouter from "./src/posts/postsRoutes.js";
@@ -12,6 +13,8 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+// this is for logger middleware
+server.use(loggerMiddleware);
 server.use(cookieParser());
 // this is for user router
 server.use("/api/users", authenticationRouter);

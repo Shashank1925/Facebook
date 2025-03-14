@@ -7,7 +7,7 @@ export const getAllPostsController = async (req, res, next) => {
             throw new ErrorMiddleware.AppError("No posts found", 404);
         }
         res.status(200).json({
-            status: "success",
+            status: "successfully fetched all posts",
             data: result
         })
     } catch (error) {
@@ -23,13 +23,12 @@ export const createPostController = async (req, res, next) => {
         console.log(image);
         const userId = req.userId;
         console.log(userId);
-        console.log("==========================");
         const result = await createPostRepo(userId, caption, image, next);
         if (!result) {
             throw new ErrorMiddleware("Post not created", 400);
         }
         res.status(200).json({
-            status: "success",
+            status: "successfully created a post",
             data: result
         })
     } catch (error) {
@@ -45,7 +44,7 @@ export const getUserAllPostsController = async (req, res, next) => {
             throw new ErrorMiddleware("No posts found", 404);
         }
         res.status(200).json({
-            status: "success",
+            status: "successfully got all posts of a user",
             data: result
         })
     } catch (error) {
@@ -61,7 +60,7 @@ export const getPostByIdController = async (req, res, next) => {
             throw new ErrorMiddleware("No posts found", 404);
         }
         res.status(200).json({
-            status: "success",
+            status: "successfully got the post",
             data: result
         })
     } catch (error) {
