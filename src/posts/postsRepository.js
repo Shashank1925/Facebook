@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import ErrorMiddleware from "../middlewares/errorMiddleware.js";
 import postModel from "./postsSchema.js";
 // This is for getting all posts from database

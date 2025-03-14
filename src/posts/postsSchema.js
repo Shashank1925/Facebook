@@ -17,7 +17,7 @@ const postsSchema = mongoose.Schema({
         type: Number
     },
     Comment: {
-        type: [String]
+        type: [{ userId: String, Comments: String }]
     }
 });
 const postModel = mongoose.model('posts', postsSchema);
