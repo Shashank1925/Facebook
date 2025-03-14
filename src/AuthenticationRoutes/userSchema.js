@@ -32,6 +32,8 @@ const userSchema = new mongoose.Schema({
         type: String,
     },
     friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-    pendingRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
+    pendingRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    resetOTP: { type: String, default: null },
+    otpExpiry: { type: Date, default: null },
 });
 export default userSchema;

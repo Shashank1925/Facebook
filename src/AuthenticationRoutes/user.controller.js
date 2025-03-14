@@ -123,7 +123,6 @@ export const getSpecificUser = async (req, res, next) => {
         res.status(200).json({
             result,
             status: "got the user details",
-
         });
     } catch (error) {
         next(error);
