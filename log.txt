@@ -1,0 +1,21 @@
+{"level":"info","message":"2025-03-14 18:30:45 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request canceled\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:30:48 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:35:15 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request canceled\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:35:17 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:42:49 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request canceled\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:42:55 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:43:46 - POST /api/friends/response-to-request/67d4187eb210e53f91fd40bc - Response: Posts:\"Unknown\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:47:11 - POST /api/friends/response-to-request/67d4187eb210e53f91fd40bc - Response: Posts:\"Unknown\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:48:38 - POST /response-to-request/67d4187eb210e53f91fd40bc - Response: Posts:\"Friend request accepted\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:49:24 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:50:45 - POST /response-to-request/67d4187eb210e53f91fd40bc - Response: Posts:\"Friend request accepted\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 18:55:08 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Already friends, request not sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:07:51 - GET /get-pending-requests - Response: Posts:\"successfully get the pending requests\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:08:41 - GET /get-pending-requests - Response: Posts:\"successfully get the pending requests\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:12:48 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Already friends, request not sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:14:09 - POST /toggle-friendship/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"Friend request sent\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:14:19 - GET /get-pending-requests - Response: Posts:\"successfully get the pending requests\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:21:37 - GET /get-pending-requests - Response: Posts:\"successfully get the pending requests\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:25:45 - GET /api/friends/get-pending-requests - Response: Posts:\"Unknown\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:26:25 - GET /api/friends/get-pending-requests - Response: Posts:\"Unknown\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 19:26:55 - GET /get-pending-requests - Response: Posts:\"successfully get the pending requests\"","service":"Facebook logging"}
