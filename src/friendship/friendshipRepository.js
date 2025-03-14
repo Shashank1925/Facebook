@@ -28,6 +28,7 @@ export const addFriendRepo = async (userId, friendId, next) => {
             // Send friend request
             friend.pendingRequests.push(userId);
             await friend.save();
+            //  Here which is friendId will become the userId for the user in controller to display it correct way 
             return { status: "Friend request sent", friendId: friend._id, userId: userId };
         }
     } catch (error) {
@@ -78,6 +79,20 @@ export const getPendingRequestsRepo = async (userId, next) => {
             throw new ErrorMidleware("User not found", 404);
         }
         return user.pendingRequests;
+    }
+    catch (error) {
+        next(error);
+    }
+};
+// This is for getting all friends of a specific user
+export const getAllfriendsRepo = async (userId, next) => {
+    try {
+        // This is for checking user is exist or not
+        const user = await UserModel.findById(userId).populate("friends", "_id name");
+        if (!user) {
+            throw new ErrorMidleware("User not found", 404);
+        }
+        return user.friends;
     }
     catch (error) {
         next(error);

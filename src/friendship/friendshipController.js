@@ -1,5 +1,5 @@
 import ErrorMiddleware from "../middlewares/errorMiddleware.js";
-import { addFriendRepo, acceptFriendRequestRepo, getPendingRequestsRepo } from "./friendshipRepository.js";
+import { addFriendRepo, acceptFriendRequestRepo, getPendingRequestsRepo, getAllfriendsRepo } from "./friendshipRepository.js";
 export const addFriendController = async (req, res, next) => {
     try {
         const userId = req.userId;
@@ -14,6 +14,7 @@ export const addFriendController = async (req, res, next) => {
         if (!result) {
             throw new ErrorMiddleware("Something went wrong", 500);
         }
+        // Here which is friendId will become the userId for the user in controller to display it correct way
         res.status(200).json({
             status: result.status,
             UserId: result.friendId,
@@ -66,6 +67,26 @@ export const getPendingRequestsController = async (req, res, next) => {
             status: "successfully get the pending requests",
             pendingRequests: pendingRequests,
         })
+    }
+    catch (error) {
+        next(error);
+    }
+};
+// This is for getting all friends of a user
+export const getAllFriendsController = async (req, res, next) => {
+    try {
+        const userId = req.params.userId;
+        if (!userId) {
+            throw new ErrorMiddleware("User id is required", 400);
+        }
+        const friends = await getAllfriendsRepo(userId, next);
+        if (!friends) {
+            throw new ErrorMiddleware("Something went wrong", 500);
+        }
+        res.status(200).json({
+            status: "successfully get the friends",
+            friends: friends,
+        });
     }
     catch (error) {
         next(error);

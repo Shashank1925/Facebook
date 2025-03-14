@@ -1,0 +1,1 @@
+{"level":"info","message":"2025-03-14 19:48:01 - GET /get-friends/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"successfully get the friends\"","service":"Facebook logging"}
