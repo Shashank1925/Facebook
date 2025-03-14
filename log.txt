@@ -1,4 +1,6 @@
  {"level":"info","message":"2025-03-14 10:04:42 - GET /user/67d285a8e2ca4cdef0793ac2 - Response: Posts:\"successfully got all posts of a user\"","service":"Facebook logging"}
 {"level":"info","message":"2025-03-14 10:12:35 - POST /67d306154e59d5586de7178e - Response: Posts:\"Comment posted successfully\"","service":"Facebook logging"}
-{"level":"info","message":"2025-03-14 10:23:13 - GET /67d306154e59d5586de7178e - Response: Posts:\"Comments fetched successfully\"","service":"Facebook logging"}
 {"level":"info","message":"2025-03-14 10:24:16 - GET /67d306154e59d5586de7178e - Response: Posts:\"Comments fetched successfully\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 10:50:57 - POST /67d306154e59d5586de7178e - Response: Posts:\"Comment posted successfully\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 11:11:07 - PUT /67d3bcb951904d0240e73cfa - Response: Posts:\"Comment updated successfully\"","service":"Facebook logging"}
+{"level":"info","message":"2025-03-14 11:11:55 - DELETE /67d3b3bbe61ed080c3560732 - Response: Posts:\"Comment deleted successfully\"","service":"Facebook logging"}
